@@ -6,6 +6,7 @@ library(Seurat)
 library(factoextra)
 library(umap)
 library(flexclust) #This package is not necessary for tsImpute, we use it to calculate adjusted Rand Index
+install.packages("Your path of the downloaded tsImpute package", repos = NULL, type = "source") #install tsImpute
 setwd('Your path of the data')
 tmp<- read.csv('gse67835.csv', row.names = 1, header= T)
 dim(tmp) #466 cells
