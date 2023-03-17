@@ -1,8 +1,9 @@
-install.packages("Your path of the downloaded tsImpute package", repos = NULL, type = "source") #install tsImpute
+#Seurat, factoextra and umap are prerequisites for tsImpute, make sure you have installed these three packages before you install tsImpute
 #install.packages('Seurat')
 #install.packages('factoextra')
 #install.packages('umap')
 #install.packages('flexclust') 
+install.packages("Your path of the downloaded tsImpute package", repos = NULL, type = "source") #install tsImpute
 library(Seurat)
 library(factoextra)
 library(umap)
