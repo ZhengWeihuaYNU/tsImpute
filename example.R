@@ -20,14 +20,7 @@ unique(cell_types) #9 cell types
 rownames(tmp)<- gsub('_','-', rownames(tmp)) 
 #filter out genes expressing in less than 5% of the cells:
 qc_counts<- filter_genes(tmp, round(0.05*ncol(tmp))) 
-#select 2000 hvgs with Seurat:
-x.seurat <- CreateSeuratObject(qc_counts)
-x.seurat <- NormalizeData(x.seurat)
-x.seurat <- ScaleData(x.seurat)
-x.seurat <- FindVariableFeatures(x.seurat, verbose = FALSE)
-filter_ID <- x.seurat@assays$RNA@var.features
-filtered<- qc_counts[filter_ID,]
-output<- tsimpute(filtered, seed= 1) #run tsImpute
+output<- tsimpute(qc_counts, seed= 1) #run tsImpute
 
 
 #use Seurat package to cluster the cells and calculate adjusted Rand index (ARI):
