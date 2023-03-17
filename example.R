@@ -27,7 +27,7 @@ x.seurat <- ScaleData(x.seurat)
 x.seurat <- FindVariableFeatures(x.seurat, verbose = FALSE)
 filter_ID <- x.seurat@assays$RNA@var.features
 filtered<- qc_counts[filter_ID,]
-output<- tsimpute(filtered, seed= 1) 
+output<- tsimpute(filtered, seed= 1) #run tsImpute
 
 
 #use Seurat package to cluster the cells and calculate adjusted Rand index (ARI):
