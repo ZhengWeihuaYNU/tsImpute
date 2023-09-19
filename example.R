@@ -15,6 +15,11 @@ library(tsImpute)
 #read data and corresponding labels:
 dat<- readRDS('darmanis.rds') 
 cell_types<- readRDS('cell_types.rds')
+
+#Users can also try tsimpute with Ting data:
+#dat<- readRDS('ting.rds')
+#cell_types<- readRDS('cell_types_ting.rds')
+
 #run tsimpute:
 output<- tsimpute(dat, seed= 1) 
 
